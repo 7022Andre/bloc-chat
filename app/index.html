@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html ng-app="blocChat">
-<head lang="en">
-    <meta charset="UTF-8">
+<html ng-app='blocChat'>
+<head lang='en'>
+    <meta charset='UTF-8'>
     <title>Bloc Chat</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel='stylesheet' href='/styles/normalize.css'>
+    <link rel='stylesheet' href='/styles/main.css'>
+    <link rel='stylesheet' href='/styles/home.css'>
 </head>
 <body>
-    <ui-view></ui-view>
-    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <nav class='navbar'>
+        <ui-view></ui-view>
+    </nav>
+    <script src='https://www.gstatic.com/firebasejs/3.7.4/firebase.js'></script>
     <script>
         // Initialize Firebase
         var config = {
-            apiKey: "AIzaSyCYIwjk3UeVSbO5qFn7zQS8_PpFe0QTch0",
-            authDomain: "bloc-chat-e2caa.firebaseapp.com",
-            databaseURL: "https://bloc-chat-e2caa.firebaseio.com",
-            storageBucket: "bloc-chat-e2caa.appspot.com",
-            messagingSenderId: "486410372978"
+            apiKey: 'AIzaSyCYIwjk3UeVSbO5qFn7zQS8_PpFe0QTch0',
+            authDomain: 'bloc-chat-e2caa.firebaseapp.com',
+            databaseURL: 'https://bloc-chat-e2caa.firebaseio.com',
+            storageBucket: 'bloc-chat-e2caa.appspot.com',
+            messagingSenderId: '486410372978'
         };
         firebase.initializeApp(config);
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="/scripts/app.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+    <script src='https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js'></script>
+    <script src='/scripts/app.js'></script>
+    <script src='/scripts/services/Room.js'></script>
+    <script src='/scripts/controllers/HomeCtrl.js'></script>
 </body>
 </html>
