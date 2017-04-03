@@ -1,5 +1,6 @@
 <section class='hero-content'>
 	<h1>{{home.heroTitle}}</h1>
+	<button type='button' class='btn btn-default' ng-controller='ModalCtrl as modal' ng-click='modal.showModal()'>Create Room</button>
 	<ul class='room-list'>
 		<li class='room-item' ng-repeat='room in home.rooms track by $index'>{{room.$id}}</li>
 	</ul>
