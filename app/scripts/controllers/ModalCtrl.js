@@ -9,5 +9,5 @@
 
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['$uibModal', ModalCtrl]);
+        .controller('ModalCtrl', ModalCtrl);
 })();
