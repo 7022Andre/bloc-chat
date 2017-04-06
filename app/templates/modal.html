@@ -4,11 +4,10 @@
 <form>
 	<div class="modal-body">
     	<h5>Enter your room name</h5>
-    	<input type="text" maxlength=15 ng-model="roomName"/>
+    	<input type="text" maxlength=15 ng-model="modal.roomName"/>
     </div>
-    <p ng-show="confirm">Your room was added.</p>
     <div class="modal-footer">
-    		<button class="btn btn-success" ng-click="createRoom()">Create Room</button>
-    		<button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    		<button class="btn btn-success" ng-click="modal.createRoom()">Create Room</button>
+    		<button class="btn btn-default" ng-click="modal.cancel()">Cancel</button>
     </div>
 </form>
