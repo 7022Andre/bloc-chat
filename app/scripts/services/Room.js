@@ -1,16 +1,12 @@
 (function () {
+    /**
+    * @function Room
+    * @desc Gets rooms database from Firebase
+    * @param {Array} $firebaseArray
+    */
     function Room($firebaseArray) {
         var ref = firebase.database().ref().child('rooms'); // Reference to database 'rooms' on backend
         var rooms = $firebaseArray(ref);
-        /**
-        * @function Room.createRoom
-        * @desc Creates room by adding a record to $firebaseArray
-        */
-        Room.createRoom = function () {
-            rooms.$add({$id: '$value'}).then(function(ref) {
-                var id = ref.key;
-            });
-        };
         return {
             all: rooms
         };
