@@ -1,6 +1,8 @@
 <section class='hero-content'>
 	<h1>{{home.heroTitle}}</h1>
+	<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
+	<!--<button type='button' class='btn btn-danger' ng-click='home.deleteRooms()'>Delete Rooms</button>-->
 	<ul class='room-list'>
-		<li class='room-item' ng-repeat='room in home.rooms track by $index'>{{room.$id}}</li>
+		<li class='room-item' ng-repeat='room in home.rooms track by $index'>{{room.$value}}</li>
 	</ul>
 </section>
