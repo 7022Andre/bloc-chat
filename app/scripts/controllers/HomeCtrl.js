@@ -1,6 +1,6 @@
 (function () {
     function HomeCtrl(Room, $uibModal) {
-        this.heroTitle = 'Bloc Chat';
+        this.homeTitle = 'Bloc Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
         /**
         * @function this.showModal
@@ -19,7 +19,13 @@
         this.deleteAllRooms = function () {
             Room.deleteAllRooms();
         };
-
+        /**
+        * @function this.showCurrentRoom
+        * @desc Shows current room in navigation
+        */
+        this.showCurrentRoom = function (room) {
+            this.currentRoom = room;
+        };
     }
 
     angular

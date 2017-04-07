@@ -1,3 +1,35 @@
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: rgb(40, 119, 79);
+	text-decoration: none;
+}
+
+a:focus {
+	color: rgb(85, 20, 0);
+	text-decoration: none;
+}
+
+button {
+	margin-right: 1rem;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	background: rgb(170,84,57);
+	color: white;
+}
+
+.home-head {
+	padding-left: 0.8rem;
+}
+
 .room-list {
 	padding: 1rem 0;
 	list-style-type: none;
@@ -5,4 +37,14 @@
 
 .room-item {
 	padding-top: 0.25rem;
+}
+
+.roomcontent {
+    background: grey;
+	color: white;
+	height: 5rem;
+}
+
+.room-head {
+	margin-left: 3rem;
 }

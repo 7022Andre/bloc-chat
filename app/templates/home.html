@@ -1,8 +1,19 @@
-<section class='hero-content'>
-	<h1>{{home.heroTitle}}</h1>
-	<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
-	<button type='button' class='btn btn-danger' ng-click='home.deleteAllRooms()'>Delete Rooms</button>
-	<ul class='room-list'>
-		<li class='room-item' ng-repeat='room in home.rooms track by $index'>{{room.$value}}</li>
-	</ul>
+<section class='navbar column third'>
+	<div class='home-head'>
+		<h1>{{home.homeTitle}}</h1>
+	</div>
+
+	<div class='container'>
+		<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
+		<button type='button' class='btn btn-danger' ng-click='home.deleteAllRooms()'>Delete Rooms</button>
+		<ul class='room-list'>
+			<li class='room-item' ng-repeat='room in home.rooms track by $index'><a href='#' class='room-links' ng-click='home.showCurrentRoom(room)'>{{room.$value}}</a></li>
+		</ul>
+	</div>
+</section>
+
+<section class='roomcontent column two-thirds'>
+	<div class='room-head'>
+		<h1>{{home.currentRoom.$value}}</h1>
+	</div>
 </section>
