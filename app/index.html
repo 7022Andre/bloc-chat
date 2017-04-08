@@ -8,6 +8,7 @@
     <link rel='stylesheet' href='/styles/normalize.css'>
     <link rel='stylesheet' href='/styles/main.css'>
     <link rel='stylesheet' href='/styles/home.css'>
+    <link rel='stylesheet' href='/styles/usernamemodal.css'>
 </head>
 <body>
     <ui-view></ui-view>
@@ -24,6 +25,7 @@
         firebase.initializeApp(config);
     </script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js'></script>
     <script src='https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
@@ -32,5 +34,6 @@
     <script src='/scripts/services/Message.js'></script>
     <script src='/scripts/controllers/HomeCtrl.js'></script>
     <script src='/scripts/controllers/ModalCtrl.js'></script>
+    <script src='/scripts/controllers/UsernameCtrl.js'></script>
 </body>
 </html>
