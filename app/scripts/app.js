@@ -18,7 +18,7 @@
         var currentUser = $cookies.get('blocChatCurrentUser'); // Loads user name from cookie
         if (!currentUser || currentUser === '') {
             $uibModal.open({
-                templateUrl: '/templates/usernamemodal.html',
+                templateUrl: '/templates/username_modal.html',
                 controller: 'UsernameCtrl as user',
                 backdrop: 'static' // User can't close modal by clicking outside of it
             });
