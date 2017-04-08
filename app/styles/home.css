@@ -1,15 +1,15 @@
 a {
+	color: rgb(85, 57, 0);
 	text-decoration: none;
-	color: white;
 }
 
 a:hover {
-	color: rgb(40, 119, 79);
+	color: rgb(35, 100, 103);
 	text-decoration: none;
 }
 
 a:focus {
-	color: rgb(85, 20, 0);
+	color: rgb(35, 100, 103);
 	text-decoration: none;
 }
 
@@ -22,29 +22,37 @@ button {
 	top: 0;
 	right: 0;
 	height: 100%;
-	background: rgb(170,84,57);
-	color: white;
+	background: rgb(255, 227, 170);
 }
 
 .home-head {
 	padding-left: 0.8rem;
+	color: rgb(85, 57, 0);
 }
 
-.room-list {
+.list {
 	padding: 1rem 0;
 	list-style-type: none;
 }
 
 .room-item {
 	padding-top: 0.25rem;
+	color: rgb(85, 57, 0);
 }
 
 .roomcontent {
-    background: grey;
-	color: white;
-	height: 5rem;
+	position: fixed;
+	height: 100%;
+	background-color: rgb(35, 100, 103);
 }
 
 .room-head {
+	color: rgb(255, 227, 170);
+	margin-left: 2rem;
+}
+
+.messages {
+	color: rgb(255, 227, 170);
 	margin-left: 3rem;
 }
+

@@ -1,5 +1,5 @@
 (function () {
-    function HomeCtrl(Room, $uibModal) {
+    function HomeCtrl(Room, Message, $uibModal) {
         this.homeTitle = 'Bloc Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
         /**
@@ -13,22 +13,23 @@
             });
         };
         /**
+        * @function this.showCurrentRoom
+        * @desc Shows current room in navigation and gets current room ID to show room messages
+        */
+        this.showCurrentRoom = function (room) {
+            this.currentRoom = room;
+            this.messages = Message.getByRoomId(room.$id);
+        };
+        /**
         * @function this.deleteAllRooms
         * @desc Deletes all rooms
         */
         this.deleteAllRooms = function () {
             Room.deleteAllRooms();
         };
-        /**
-        * @function this.showCurrentRoom
-        * @desc Shows current room in navigation
-        */
-        this.showCurrentRoom = function (room) {
-            this.currentRoom = room;
-        };
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
 })();
