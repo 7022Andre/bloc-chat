@@ -1,7 +1,6 @@
 <aside class='navbar column third'>
 	<div class='home-head'>
 		<h1>{{home.homeTitle}}</h1>
-		<h1>{{home.currentTime}}</h1>
 		<h5 ng-show='home.name'>Welcome back, <strong>{{home.name}}</strong>.</h5>
 	</div>
 
@@ -9,6 +8,8 @@
 		<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
 		<button type='button' class='btn btn-danger' ng-click='home.deleteAllRooms()'>Delete Rooms</button>
 		<ul class='list'>
+			<li ng-show='!home.rooms[0]'><strong>Please create a new room.</strong></li>
+			<li ng-show='home.rooms[0]'><strong>Please choose your room.</strong></li>
 			<li class='room-item' ng-repeat='room in home.rooms track by $index'><a href='' class='room-links' ng-click='home.showCurrentRoom(room)'>{{room.$value}}</a></li>
 		</ul>
 	</div>
@@ -20,7 +21,7 @@
 	</div>
 	<div class='messages'>
 		<ul class='list'>
-			<li ng-repeat='message in home.messages track by $index'>({{message.sentAt}}) - [{{message.username}}]: {{message.content}}</li>
+			<li ng-repeat='message in home.messages track by $index'><strong>({{message.sentAt | date:'MM-dd-yyyy - HH:mm:ss'}}) - [{{message.username}}]:</strong> {{message.content}}</li>
 		</ul>
 	</div>
 </section>

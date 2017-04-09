@@ -3,7 +3,6 @@
         this.homeTitle = 'Bloc Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
         this.name = $cookies.get('blocChatCurrentUser'); // Gets user name from cookie.
-        this.currentTime = new Date();
         /**
         * @function this.showModal
         * @desc Opens modal in home template
@@ -29,10 +28,13 @@
         this.deleteAllRooms = function () {
             Room.deleteAllRooms();
         };
+        /**
+        * @function this.sendMessage
+        * @desc Sends message to Message factory (incl. user name, room Id and content); clears input field afterwards
+        */
         this.sendMessage = function () {
-            var current = new Date();
-            Message.send(this.name, this.currentRoom, current, this.messageContent);
-            // clear input
+            Message.send(this.name, this.currentRoom, this.messageContent);
+            this.messageContent = "";
         };
     }
 

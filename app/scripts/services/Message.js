@@ -6,11 +6,11 @@
             getByRoomId: function (roomId) {
                 return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId)); // returns array with all messages in specific room
             },
-            send: function (name, room, time, message) {
+            send: function (name, room, message) {
                 messages.$add({
                     username: name,
                     roomId: room.$id,
-                    sentAt: time,
+                    sentAt: firebase.database.ServerValue.TIMESTAMP,
                     content: message
                 });
             }
