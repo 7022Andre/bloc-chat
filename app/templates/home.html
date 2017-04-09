@@ -1,6 +1,7 @@
 <aside class='navbar column third'>
 	<div class='home-head'>
 		<h1>{{home.homeTitle}}</h1>
+		<h1>{{home.currentTime}}</h1>
 		<h5 ng-show='home.name'>Welcome back, <strong>{{home.name}}</strong>.</h5>
 	</div>
 
@@ -15,11 +16,20 @@
 
 <section class='roomcontent column two-thirds'>
 	<div class='room-head'>
-		<h1>{{home.currentRoom.$value}}</h1>
+		<h1><strong>{{home.currentRoom.$value}}</strong></h1>
 	</div>
 	<div class='messages'>
 		<ul class='list'>
-			<li ng-repeat='message in home.messages track by $index'>[{{message.sentAt}}] - {{message.username}}: {{message.content}}</li>
+			<li ng-repeat='message in home.messages track by $index'>({{message.sentAt}}) - [{{message.username}}]: {{message.content}}</li>
 		</ul>
+	</div>
+</section>
+
+<section>
+	<div class='message-input'>
+		<form>
+    		<input type='text' ng-model="home.messageContent"/>
+    		<button class='btn btn-success' ng-click='home.sendMessage()'>Send!</button>
+		</form>
 	</div>
 </section>
