@@ -14,13 +14,17 @@
             });
     }
 
-    function LoginPopup() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider);
+    function Login ($uibModal) {
+        $uibModal.open({
+                templateUrl: '/templates/login.html',
+                controller: 'LoginCtrl as login',
+                backdrop: 'static',
+                keyboard: false
+            });
     }
 
     angular
         .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap'])
         .config(config)
-        .run([LoginPopup]);
+        .run(['$uibModal', Login]);
 })();
