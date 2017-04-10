@@ -14,20 +14,13 @@
             });
     }
 
-    function BlocChatCookies($cookies, $uibModal) {
-        var currentUser = $cookies.get('blocChatCurrentUser'); // Loads user name from cookie
-        if (!currentUser || currentUser === '') {
-            $uibModal.open({
-                templateUrl: '/templates/username_modal.html',
-                controller: 'UsernameCtrl as user',
-                backdrop: 'static', // User can't close modal by clicking outside of it
-                keyboard: false
-            });
-        }
+    function LoginPopup() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider);
     }
 
     angular
-        .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
+        .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap'])
         .config(config)
-        .run(['$cookies', '$uibModal', BlocChatCookies]);
+        .run([LoginPopup]);
 })();

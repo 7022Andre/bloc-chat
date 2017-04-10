@@ -40,6 +40,7 @@
                 alert('Please choose a room first.');
             }
         };
+
     }
 
     angular

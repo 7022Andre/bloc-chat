@@ -11,12 +11,17 @@
 				</ul>
 			</div>
 			<form class='submit-area'>
-    			<input class='submit-bar' type='text' ng-model='home.messageContent'/>
-    			<button class='btn btn-success' ng-click='home.sendMessage()'>Send!</button>
+				<input class='submit-bar' type='text' ng-model='home.messageContent'/>
+				<button class='btn btn-success' ng-click='home.sendMessage()'>Send!</button>
 			</form>
 		</div>
 
 		<div class='navbar col-md-3'>
+			<div id="user-container">
+				<button ng-click='' class="btn btn-info">Sign-out</button>
+				<button ng-click='home.signInWithPopup()' class="btn btn-info">Sign-in with Google</button>
+			</div>
+
 			<div class='home-head'>
 				<h1>{{home.homeTitle}}</h1>
 				<h5 ng-show='home.name'>Welcome back, <strong>{{home.name}}</strong>.</h5>
