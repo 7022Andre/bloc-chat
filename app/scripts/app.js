@@ -20,8 +20,8 @@
             $uibModal.open({
                 templateUrl: '/templates/username_modal.html',
                 controller: 'UsernameCtrl as user',
-                backdrop: 'static', // User can't close modal by clicking outside of it
-                keyboard: false // User can't close modal by pressing ESC key
+                backdrop: 'static',
+                keyboard: false
             });
         }
     }

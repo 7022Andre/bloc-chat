@@ -1,62 +1,70 @@
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+	height: 100%;
+}
+
 a {
 	color: rgb(85, 57, 0);
 	text-decoration: none;
 }
 
-a:hover {
+a:hover,a:focus {
 	color: rgb(35, 100, 103);
 	text-decoration: none;
 }
 
-a:focus {
-	color: rgb(35, 100, 103);
-	text-decoration: none;
-}
-
-button {
-	margin-right: 1rem;
-}
-
-.navbar {
-	position: fixed;
-	top: 0;
-	right: 0;
+.room-content {
+	margin-bottom: 0;
 	height: 100%;
-	background: rgb(255, 227, 170);
 }
 
-.home-head {
-	padding-left: 0.8rem;
+.room-head, .room-item, .message-list, .home-head {
 	color: rgb(85, 57, 0);
 }
 
-h4 {
-	margin-bottom: 1rem;
-}
-
-.list {
-	padding: 1rem 0;
+.message-list {
 	list-style-type: none;
 }
 
-.room-item {
-	padding-top: 0.25rem;
-	color: rgb(85, 57, 0);
-}
-
-.roomcontent {
-	position: fixed;
+.navbar {
+	background-color: rgb(255, 227, 170);
 	height: 100%;
-	background-color: rgb(35, 100, 103);
+	margin-bottom: 0;
 }
 
-.room-head {
-	color: rgb(255, 227, 170);
-	margin-left: 2rem;
+.room-list {
+	list-style-type: none;
+	margin-top: 1rem;
+	padding-left: 0;
 }
 
-.messages {
-	color: rgb(255, 227, 170);
-	margin-left: 3rem;
+.submit-area {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 15px;
+	min-width: 100%;
+	max-width: 100%;
 }
 
+.submit-bar {
+	width: 66%;
+}
+
+@media (max-width: 992px) and (min-width: 320px) {
+	body {
+		padding-top: 300px;
+	}
+
+	.navbar {
+		position: fixed;
+		top: 0;
+		height: auto;
+		width: 100%;
+	}
+}

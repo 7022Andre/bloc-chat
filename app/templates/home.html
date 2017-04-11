@@ -1,25 +1,36 @@
-<aside class='navbar column third'>
-	<div class='home-head'>
-		<h1>{{home.homeTitle}}</h1>
-		<h5 ng-show='home.name'>Welcome back, <strong>{{home.name}}</strong>.</h5>
-	</div>
+<div class='container fill'>
+	<div class='row'>
+		<div class='room-content col-md-9'>
+			<div class='room-head'>
+				<h1><strong>{{home.currentRoom.$value}}</strong></h1>
+				<hr>
+			</div>
+			<div class='message-list'>
+				<ul class='message-list'>
+					<li ng-repeat='message in home.messages track by $index'><strong>({{message.sentAt | date:'MM-dd-yyyy - HH:mm:ss'}}) - [{{message.username}}]:</strong> {{message.content}}</li>
+				</ul>
+			</div>
+			<form class='submit-area'>
+    			<input class='submit-bar' type='text' ng-model='home.messageContent'/>
+    			<button class='btn btn-success' ng-click='home.sendMessage()'>Send!</button>
+			</form>
+		</div>
 
-	<div class='container'>
-		<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
-		<button type='button' class='btn btn-danger' ng-click='home.deleteAllRooms()'>Delete Rooms</button>
-		<ul class='list'>
-			<li class='room-item' ng-repeat='room in home.rooms track by $index'><a href='' class='room-links' ng-click='home.showCurrentRoom(room)'>{{room.$value}}</a></li>
-		</ul>
+		<div class='navbar col-md-3'>
+			<div class='home-head'>
+				<h1>{{home.homeTitle}}</h1>
+				<h5 ng-show='home.name'>Welcome back, <strong>{{home.name}}</strong>.</h5>
+			</div>
+			<div>
+				<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
+				<button type='button' class='btn btn-danger' ng-click='home.deleteAllRooms()'>Delete Rooms</button>
+				<ul class='room-list'>
+					<li ng-show='!home.rooms[0]'><strong>Please create a new room.</strong></li>
+					<li ng-show='home.rooms[0]'><strong>Please choose your room.</strong></li>
+					<br>
+					<li class='room-item' ng-repeat='room in home.rooms track by $index'><a href='' class='room-links' ng-click='home.showCurrentRoom(room)'>{{room.$value}}</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-</aside>
-
-<section class='roomcontent column two-thirds'>
-	<div class='room-head'>
-		<h1>{{home.currentRoom.$value}}</h1>
-	</div>
-	<div class='messages'>
-		<ul class='list'>
-			<li ng-repeat='message in home.messages track by $index'>[{{message.sentAt}}] - {{message.username}}: {{message.content}}</li>
-		</ul>
-	</div>
-</section>
+</div>
