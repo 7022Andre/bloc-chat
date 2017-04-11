@@ -1,6 +1,5 @@
 (function () {
 	function LoginCtrl($uibModalInstance, Login) {
-		this.currentUser = '';
 		this.createForm = false;
 		this.loginForm = false;
 		this.mainForm = true;
@@ -28,11 +27,9 @@
 			});
 		};
 		this.loginEmail = function () {
-			Login.loginEmail(this.userEmail, this.userPassword).then(function(user) {
-				console.log(user.uid); // Success: Returns userId and closes modal
-				this.currentUser = user.uid;
-				console.log("User: " + this.currentUser);
+			Login.loginEmail(this.userEmail, this.userPassword).then(function() {
 				$uibModalInstance.close();
+
 			}, function(error) {
 				console.log(error.message); // Error: Returns error message
 			});
@@ -45,7 +42,6 @@
 				console.log(error.message); 
 			});
 		};
-
 	}
 
 	    angular

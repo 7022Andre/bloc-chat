@@ -1,8 +1,11 @@
 (function () {
-    function HomeCtrl(Room, Message, Login, $uibModal) {
+    function HomeCtrl(Room, Message, Login, $scope, $uibModal) {
         this.currentUser = '';
         this.homeTitle = 'Bloc Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
+        this.getCurrentUser = function () {
+            Login.getUserId();
+        };
         /**
         * @function this.showModal
         * @desc Opens modal in home template
@@ -44,5 +47,5 @@
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', 'Login', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', 'Login', '$scope', '$uibModal', HomeCtrl]);
 })();
