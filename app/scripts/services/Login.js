@@ -1,18 +1,15 @@
 (function () {
     function Login() {
         return {
-            createAccount: function (email, password) {
-                firebase.auth().createUserWithEmailAndPassword(email, password);
+            createAccount: function (email, password) { // Creates new account
+                return firebase.auth().createUserWithEmailAndPassword(email, password);
             },
-            loginGoogle: function () {
+            loginGoogle: function () { // Popup window to login with Google account
                 var provider = new firebase.auth.GoogleAuthProvider();
-                firebase.auth().signInWithPopup(provider);
+                return firebase.auth().signInWithPopup(provider);
             },
-            loginEmail: function (email, password) {
-                firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                });
+            loginEmail: function (email, password) { // Login existing user
+                return firebase.auth().signInWithEmailAndPassword(email, password);
             }
         };
     }

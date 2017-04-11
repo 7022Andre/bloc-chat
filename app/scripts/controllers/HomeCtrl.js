@@ -1,5 +1,6 @@
 (function () {
-    function HomeCtrl(Room, Message, $uibModal) {
+    function HomeCtrl(Room, Message, Login, $uibModal) {
+        this.currentUser = '';
         this.homeTitle = 'Bloc Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
         /**
@@ -43,5 +44,5 @@
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', 'Login', '$uibModal', HomeCtrl]);
 })();
