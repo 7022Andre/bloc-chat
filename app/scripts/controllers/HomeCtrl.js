@@ -1,10 +1,14 @@
 (function () {
     function HomeCtrl(Room, Message, Login, $scope, $uibModal) {
-        this.currentUser = '';
+        this.currentUser;
         this.homeTitle = 'Bloc Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
+        
+        // Something does not work. Maybe console.log if it works here and in Login factory method.
         this.getCurrentUser = function () {
-            Login.getUserId();
+            Login.getUserId().then(function (userId) {
+                this.currentUser = userId;
+            });
         };
         /**
         * @function this.showModal

@@ -2,7 +2,7 @@
     function Login() {
         return {
             getUserId: function () {
-                console.log(firebase.auth().currentUser);
+                return firebase.auth().currentUser;
             },
             createAccount: function (email, password) { // Creates new account
                 return firebase.auth().createUserWithEmailAndPassword(email, password);
