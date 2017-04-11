@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h1>Please enter your user name:</h1>
+</div>
+<form>
+	<div class="modal-body">
+    	<input type="text" ng-model="user.userName" maxlength="20" required pattern="^[a-zA-Z0-9].*"/>
+    </div>
+    <div class="modal-footer">
+    		<button class="btn btn-success" ng-click="user.createUser(userName)">Create User</button>
+    </div>
+</form>
