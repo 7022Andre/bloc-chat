@@ -7,7 +7,7 @@
 			</div>
 			<div class='message-list'>
 				<ul class='message-list'>
-					<li ng-repeat='message in home.messages track by $index'><strong>({{message.sentAt | date:'MM-dd-yyyy - HH:mm:ss'}}) - [{{message.username}}]:</strong> {{message.content}}</li>
+					<li ng-repeat='message in home.messages track by $index'><strong>({{message.sentAt | date:'MM-dd-yyyy - HH:mm:ss'}}) - [{{message.email}}]:</strong> {{message.content}}</li>
 				</ul>
 			</div>
 			<form class='submit-area'>
@@ -19,15 +19,13 @@
 		<div class='navbar col-md-3'>
 			<div class='home-head'>
 				<h1>{{home.homeTitle}}</h1>
-				<h1>User: {{home.currentUser}}</h1>
-				<h5 ng-show='home.name'>Welcome back, <strong>{{home.name}}</strong>.</h5>
 			</div>
 			<div>
 				<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
-				<button type='button' class='btn btn-danger' ng-click='home.deleteAllRooms()'>Delete Rooms</button>
+				<button type='button-danger' class='btn btn-danger' ng-if='home.userEmail()' ng-click='home.signOut()'>Sign Out</button>
 				<ul class='room-list'>
-					<li ng-show='!home.rooms[0]'><strong>Please create a new room.</strong></li>
-					<li ng-show='home.rooms[0]'><strong>Please choose your room.</strong></li>
+					<li ng-if='!home.rooms[0]'><strong>Please create a new room.</strong></li>
+					<li ng-if='home.rooms[0]'><strong>Please choose your room.</strong></li>
 					<br>
 					<li class='room-item' ng-repeat='room in home.rooms track by $index'><a href='' class='room-links' ng-click='home.showCurrentRoom(room)'>{{room.$value}}</a></li>
 				</ul>

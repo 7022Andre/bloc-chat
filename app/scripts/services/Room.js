@@ -11,9 +11,6 @@
             all: rooms, // returns rooms array
             addRoom: function (roomName) { // adds new room to database
                 rooms.$add(roomName);
-            },
-            deleteAllRooms: function () { // deletes 'rooms' database and ALL rooms
-                ref.remove();
             }
         };
     }

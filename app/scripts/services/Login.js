@@ -1,8 +1,20 @@
 (function () {
-    function Login() {
+    function Login($uibModal) {
         return {
-            getUserId: function () {
-                return firebase.auth().currentUser;
+            signOut: function () {
+                firebase.auth().signOut();
+                alert('You have been signed out.');
+                $uibModal.open({
+                    templateUrl: '/templates/login.html',
+                    controller: 'LoginCtrl as login',
+                    backdrop: 'static',
+                    keyboard: false
+                });
+            },
+            getUserEmail: function () {
+                if (firebase.auth().currentUser !== null) {
+                    return firebase.auth().currentUser.email;
+                }
             },
             createAccount: function (email, password) { // Creates new account
                 return firebase.auth().createUserWithEmailAndPassword(email, password);
@@ -19,5 +31,5 @@
 
     angular
         .module('blocChat')
-        .factory('Login', Login);
+        .factory('Login', ['$uibModal', Login]);
 })();

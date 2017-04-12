@@ -6,9 +6,9 @@
             getByRoomId: function (roomId) {
                 return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId)); // returns array with all messages in specific room
             },
-            send: function (name, room, message) {
+            send: function (email, room, message) {
                 messages.$add({
-                    username: name,
+                    email: email,
                     roomId: room.$id,
                     sentAt: firebase.database.ServerValue.TIMESTAMP,
                     content: message
