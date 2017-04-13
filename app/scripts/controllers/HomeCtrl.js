@@ -1,7 +1,8 @@
 (function () {
-    function HomeCtrl(Room, Message, $uibModal) {
-        this.homeTitle = 'Bloc Chat';
+    function HomeCtrl(Room, $uibModal) {
+        this.heroTitle = 'Bloc Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
+        var entireRoom = Room.all;
         /**
         * @function this.showModal
         * @desc Opens modal in home template
@@ -12,24 +13,9 @@
                 controller: 'ModalCtrl as modal'
             });
         };
-        /**
-        * @function this.showCurrentRoom
-        * @desc Shows current room in navigation and gets current room ID to show room messages
-        */
-        this.showCurrentRoom = function (room) {
-            this.currentRoom = room;
-            this.messages = Message.getByRoomId(room.$id);
-        };
-        /**
-        * @function this.deleteAllRooms
-        * @desc Deletes all rooms
-        */
-        this.deleteAllRooms = function () {
-            Room.deleteAllRooms();
-        };
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', '$uibModal', HomeCtrl]);
 })();

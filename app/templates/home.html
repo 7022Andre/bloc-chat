@@ -1,24 +1,8 @@
-<aside class='navbar column third'>
-	<div class='home-head'>
-		<h1>{{home.homeTitle}}</h1>
-	</div>
-
-	<div class='container'>
-		<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
-		<button type='button' class='btn btn-danger' ng-click='home.deleteAllRooms()'>Delete Rooms</button>
-		<ul class='list'>
-			<li class='room-item' ng-repeat='room in home.rooms track by $index'><a href='' class='room-links' ng-click='home.showCurrentRoom(room)'>{{room.$value}}</a></li>
-		</ul>
-	</div>
-</aside>
-
-<section class='roomcontent column two-thirds'>
-	<div class='room-head'>
-		<h1>{{home.currentRoom.$value}}</h1>
-	</div>
-	<div class='messages'>
-		<ul class='list'>
-			<li ng-repeat='message in home.messages track by $index'>[{{message.sentAt}}] - {{message.username}}: {{message.content}}</li>
-		</ul>
-	</div>
+<section class='hero-content'>
+	<h1>{{home.heroTitle}}</h1>
+	<button type='button' class='btn btn-default' ng-click='home.showModal()'>Create Room</button>
+	<!--<button type='button' class='btn btn-danger' ng-click='home.deleteRooms()'>Delete Rooms</button>-->
+	<ul class='room-list'>
+		<li class='room-item' ng-repeat='room in home.rooms track by $index'>{{room.$value}}</li>
+	</ul>
 </section>
