@@ -28,18 +28,6 @@
         this.deleteAllRooms = function () {
             Room.deleteAllRooms();
         };
-        /**
-        * @function this.sendMessage
-        * @desc Sends message to Message factory (incl. user name, room Id and content); clears input field afterwards
-        */
-        this.sendMessage = function () {
-            if (this.currentRoom) {
-                Message.send(this.name, this.currentRoom, this.messageContent);
-                this.messageContent = '';
-            } else {
-                alert('Please choose a room first.');
-            }
-        };
     }
 
     angular
