@@ -1,38 +1,38 @@
-<div class='main-form' ng-if='login.mainForm'>
-	<div class='modal-header'>
+<div class="main-form" ng-if="login.formShown === 'main'">
+	<div class="modal-header">
 		<h1>Please sign in or create an account.</h1>
 	</div>
-	<div class='modal-body'>
-		<button class='btn btn-info' ng-click='login.showEmailForm()'>Email</button>
-		<button class='btn btn-info' ng-click='login.loginGoogle()'>Google account</button>
-		<button class='btn btn-info' ng-click='login.showCreateForm()'>Create an account</button>
+	<div class="modal-body">
+		<button class="btn btn-info" ng-click="login.showForm('login')">Email</button>
+		<button class="btn btn-info" ng-click="login.loginGoogle()">Google account</button>
+		<button class="btn btn-info" ng-click="login.showForm('create')">Create an account</button>
 	</div>
 </div>
 
-<div class='login-form' ng-if='login.emailForm'>
-	<div class='modal-header'>
+<div class="login-form" ng-if="login.formShown === 'login'">
+	<div class="modal-header">
 		<h1>Login</h1>
 	</div>
-	<div class='modal-body'>
-		<input type='email' ng-model='login.userEmail' placeholder='Email address' required/>
-		<input type='password' ng-model='login.userPassword' placeholder='Password' required/>
+	<div class="modal-body">
+		<input type="email" ng-model="login.userEmail" placeholder="Email address" required/>
+		<input type="password" ng-model="login.userPassword" placeholder="Password" required/>
 	</div>
-	<div class='modal-footer'>
-		<button class='btn btn-info' ng-click='login.showMainForm()'>Cancel</button>
-		<button class='btn btn-success' ng-click='login.loginEmail()'>Log me in!</button>
+	<div class="modal-footer">
+		<button class="btn btn-info" ng-click="login.showForm('main')">Cancel</button>
+		<button class="btn btn-success" ng-click="login.loginEmail(); login.userPassword = ''">Log me in!</button>
 	</div>
 </div>
 
-<div class='create-form' ng-if='login.createForm'>
-	<div class='modal-header'>
+<div class="create-form" ng-if="login.formShown === 'create'">
+	<div class="modal-header">
 		<h1>Create an account</h1>
 	</div>
-	<div class='modal-body'>
-		<input type='email' ng-model='login.userEmail' placeholder='Email address' required/>
-		<input type='password' ng-model='login.userPassword' placeholder='Password' required/>
+	<div class="modal-body">
+		<input type="email" ng-model="login.userEmail" placeholder="Email address" required/>
+		<input type="password" ng-model="login.userPassword" placeholder="Password" required/>
 	</div>
-	<div class='modal-footer'>
-		<button class='btn btn-info' ng-click='login.showMainForm()'>Cancel</button>
-		<button class='btn btn-success' ng-click='login.createAccount()'>Create account</button>
+	<div class="modal-footer">
+		<button class="btn btn-info" ng-click="login.showForm('main')">Cancel</button>
+		<button class="btn btn-success" ng-click="login.createAccount(); login.userPassword = ''">Create account</button>
 	</div>
 </div>

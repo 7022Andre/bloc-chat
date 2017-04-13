@@ -2,13 +2,7 @@
     function HomeCtrl(Room, Message, Login, $uibModal) {
         this.homeTitle = 'Bloc Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
-        /**
-        * @function this.userEmail
-        * @desc Returns user email
-        */
-        this.userEmail = function () {
-            return Login.getUserEmail();
-        };
+        this.userData = Login.getUser();
         /**
         * @function this.signOut
         * @desc Signs out current user
@@ -40,7 +34,7 @@
         */
         this.sendMessage = function () {
             if (this.currentRoom) {
-                Message.send(this.userEmail(), this.currentRoom, this.messageContent);
+                Message.send(this.userData.user.email, this.currentRoom, this.messageContent);
                 this.messageContent = '';
             } else {
                 alert('Please choose a room first.');

@@ -11,11 +11,6 @@
                     keyboard: false
                 });
             },
-            getUserEmail: function () {
-                if (firebase.auth().currentUser !== null) {
-                    return firebase.auth().currentUser.email;
-                }
-            },
             createAccount: function (email, password) { // Creates new account
                 return firebase.auth().createUserWithEmailAndPassword(email, password);
             },
@@ -25,6 +20,10 @@
             },
             loginEmail: function (email, password) { // Login existing user
                 return firebase.auth().signInWithEmailAndPassword(email, password);
+            },
+            userData: {},
+            getUser: function () {
+                return this.userData;
             }
         };
     }
