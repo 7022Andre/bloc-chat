@@ -7,7 +7,7 @@
 			</div>
 			<div class="message-list">
 				<ul class="message-list">
-					<li ng-repeat="message in home.messages track by $index"><strong>({{message.sentAt | date:"MM-dd-yyyy - HH:mm:ss"}}) - [{{home.userData.user.email}}]:</strong> {{message.content}}</li>
+					<li ng-repeat="message in home.messages track by $index"><strong>({{message.sentAt | date:"MM-dd-yyyy - HH:mm:ss"}}) - [{{message.email}}]:</strong> {{message.content}}</li>
 				</ul>
 			</div>
 			<form class="submit-area">
