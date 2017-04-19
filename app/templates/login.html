@@ -9,7 +9,7 @@
 	</div>
 </div>
 
-<div class="login-form" ng-if="login.formShown === 'login'">
+<form class="login-form" ng-submit="login.userPassword=''" ng-if="login.formShown === 'login'">
 	<div class="modal-header">
 		<h1>Login</h1>
 	</div>
@@ -18,12 +18,13 @@
 		<input type="password" ng-model="login.userPassword" placeholder="Password" required/>
 	</div>
 	<div class="modal-footer">
+		<button type="submit" class="btn btn-success" ng-click="login.loginEmail()">Log me in!</button>
 		<button class="btn btn-info" ng-click="login.showForm('main')">Cancel</button>
-		<button class="btn btn-success" ng-click="login.loginEmail(); login.userPassword = ''">Log me in!</button>
 	</div>
-</div>
+</form>
 
-<div class="create-form" ng-if="login.formShown === 'create'">
+
+<form class="create-form" ng-submit="login.userPassword=''" ng-if="login.formShown === 'create'">
 	<div class="modal-header">
 		<h1>Create an account</h1>
 	</div>
@@ -32,7 +33,7 @@
 		<input type="password" ng-model="login.userPassword" placeholder="Password" required/>
 	</div>
 	<div class="modal-footer">
+		<button class="btn btn-success" ng-click="login.createAccount()">Create account</button>
 		<button class="btn btn-info" ng-click="login.showForm('main')">Cancel</button>
-		<button class="btn btn-success" ng-click="login.createAccount(); login.userPassword = ''">Create account</button>
 	</div>
-</div>
+</form>

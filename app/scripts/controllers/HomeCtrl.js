@@ -9,7 +9,7 @@
         */
         this.signOut = function () {
             Login.signOut();
-        }
+        };
         /**
         * @function this.showModal
         * @desc Opens modal in home template

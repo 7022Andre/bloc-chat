@@ -14,13 +14,13 @@
             });
     }
 
-    function Login ($uibModal) {
+    function Login($uibModal) {
         $uibModal.open({
-                templateUrl: '/templates/login.html',
-                controller: 'LoginCtrl as login',
-                backdrop: 'static',
-                keyboard: false
-            });
+            templateUrl: '/templates/login.html',
+            controller: 'LoginCtrl as login',
+            backdrop: 'static',
+            keyboard: false
+        });
     }
 
     angular
