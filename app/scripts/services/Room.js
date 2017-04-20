@@ -12,7 +12,7 @@
             addRoom: function (roomName) { // adds new room to database
                 rooms.$add(roomName);
             }
-        };
+        }
     }
 
     angular

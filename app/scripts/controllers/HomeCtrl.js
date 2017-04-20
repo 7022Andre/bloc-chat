@@ -21,11 +21,11 @@
             });
         };
         /**
-        * @function this.showCurrentRoom
-        * @desc Shows current room in navigation and gets current room ID to show room messages
+        * @function this.selectRoom
+        * @desc Selects room in navigation and receives room ID to show room messages
         */
-        this.showCurrentRoom = function (room) {
-            this.currentRoom = room;
+        this.selectRoom = function (room) {
+            this.selectedRoom = room;
             this.messages = Message.getByRoomId(room.$id);
         };
         /**
@@ -33,8 +33,8 @@
         * @desc Sends message to Message factory (incl. user name, room Id and content); clears input field afterwards
         */
         this.sendMessage = function () {
-            if (this.currentRoom) {
-                Message.send(this.userData.user.email, this.currentRoom, this.messageContent);
+            if (this.selectedRoom) {
+                Message.send(this.userData.user.email, this.selectedRoom, this.messageContent);
                 this.messageContent = '';
             } else {
                 alert('Please choose a room first.');
