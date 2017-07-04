@@ -3,10 +3,11 @@ Real-time chat application using AngularJS and Firebase.
 
 ## Summary
 
-I created a chat application that sends and receives messages in realtime using AngularJS on the front-end and Google Firebase on the back-end. Main features include:
+I created a chat application that sends and receives messages in realtime using AngularJS on the front-end and Google Firebase on the back-end. Main features:
 
-- Authentication modal using UI Bootstrap
-- Model to create new chat rooms
+- Authentication modal using [UI Bootstrap](http://angular-ui.github.io/bootstrap)
+- Modal to create new rooms
+- Send messages in room
 - Interact with Google Firebase API
 
 The deployed version can be found [here](https://realtime-chat.netlify.com).<br>
