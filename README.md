@@ -1,5 +1,5 @@
-# BlocChat Angular
-Real-time chat application using AngularJS and Firebase.
+# BlocChat AngularJS
+A simple real-time chat application using AngularJS and Firebase.
 
 ## Summary
 
