@@ -33,6 +33,6 @@
     }
 
     angular
-        .module('blocChat')
+        .module('pdx-chat')
         .controller('LoginCtrl', ['$uibModalInstance', 'Login', LoginCtrl]);
 })();

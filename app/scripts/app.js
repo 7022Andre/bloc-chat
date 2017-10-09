@@ -24,7 +24,7 @@
     }
 
     angular
-        .module('blocChat', ['ui.router', 'firebase', 'ui.bootstrap'])
+        .module('pdx-chat', ['ui.router', 'firebase', 'ui.bootstrap'])
         .config(config)
         .run(['$uibModal', Login]);
 })();

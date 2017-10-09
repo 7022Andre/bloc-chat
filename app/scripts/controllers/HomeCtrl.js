@@ -1,6 +1,6 @@
 (function () {
     function HomeCtrl(Room, Message, Login, $uibModal) {
-        this.homeTitle = 'Bloc Chat';
+        this.homeTitle = 'PDX Chat';
         this.rooms = Room.all; // Room.all = Array of "rooms" database with each room in an index as object
         this.userData = Login.getUser();
         /**
@@ -43,6 +43,6 @@
     }
 
     angular
-        .module('blocChat')
+        .module('pdx-chat')
         .controller('HomeCtrl', ['Room', 'Message', 'Login', '$uibModal', HomeCtrl]);
 })();

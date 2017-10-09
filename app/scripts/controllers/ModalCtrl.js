@@ -14,6 +14,6 @@
     }
 
     angular
-        .module('blocChat')
+        .module('pdx-chat')
         .controller('ModalCtrl', ['$uibModalInstance', 'Room', ModalCtrl]);
 })();

@@ -16,6 +16,6 @@
     }
 
     angular
-        .module('blocChat')
+        .module('pdx-chat')
         .factory('Room', ['$firebaseArray', Room]);
 })();

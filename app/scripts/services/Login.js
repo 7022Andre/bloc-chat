@@ -29,6 +29,6 @@
     }
 
     angular
-        .module('blocChat')
+        .module('pdx-chat')
         .factory('Login', ['$uibModal', Login]);
 })();

@@ -18,6 +18,6 @@
     }
 
     angular
-        .module('blocChat')
+        .module('pdx-chat')
         .factory('Message', ['$firebaseArray', Message]);
 })();
