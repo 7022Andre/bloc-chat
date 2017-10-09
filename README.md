@@ -1,5 +1,5 @@
 # PDX Chat
-A simple real time chat application about Porland using AngularJS and Firebase.
+A simple real time chat application about Portland using AngularJS and Firebase.
 
 ## Summary
 
