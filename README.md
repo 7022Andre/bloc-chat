@@ -9,5 +9,6 @@ This chat sends and receives messages in real time using AngularJS on the front-
 - Modal to create new rooms
 - Send messages in room
 - Interact with Google Firebase API
+- [Styles and design via angular material 1.1.5](https://www.npmjs.com/package/angular-material)
 
 The deployed version can be found [here](https://realtime-chat.netlify.com).

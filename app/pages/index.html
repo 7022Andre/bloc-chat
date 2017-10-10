@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html ng-app='pdx-chat'>
-<head lang='en'>
+  <head lang='en'>
     <meta charset='UTF-8'>
-    <title>PDX Chat</title>
+    <title>PDX Chat - The Instant Messenger about Portland, Oregon</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link rel='stylesheet' href='/styles/normalize.css'>
     <link rel='stylesheet' href='/styles/main.css'>
     <link rel='stylesheet' href='/styles/home.css'>
-</head>
-<body>
+    <link rel='stylesheet' href='/styles/login.css'>
+  </head>
+  <body>
     <ui-view></ui-view>
-    <script src='https://www.gstatic.com/firebasejs/3.7.4/firebase.js'></script>
+    <script src='//www.gstatic.com/firebasejs/3.7.4/firebase.js'></script>
     <script>
-        var config = {
-            apiKey: 'AIzaSyBfnPn6rkJNrAi-QjM9h_jZqdGx_WGqFf0',
-            authDomain: 'pdx-chat.firebaseapp.com',
-            databaseURL: 'https://pdx-chat.firebaseio.com',
-            storageBucket: 'pdx-chat.appspot.com',
-            messagingSenderId: '529166130707'
-        };
-        firebase.initializeApp(config);
+      var config = {
+        apiKey: 'AIzaSyBfnPn6rkJNrAi-QjM9h_jZqdGx_WGqFf0',
+        authDomain: 'pdx-chat.firebaseapp.com',
+        databaseURL: 'https://pdx-chat.firebaseio.com',
+        storageBucket: 'pdx-chat.appspot.com',
+        messagingSenderId: '529166130707'
+      };
+      firebase.initializeApp(config);
     </script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js'></script>
-    <script src='https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src='//cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
     <script src='/scripts/app.js'></script>
     <script src='/scripts/services/Room.js'></script>
     <script src='/scripts/services/Message.js'></script>
@@ -34,5 +35,5 @@
     <script src='/scripts/controllers/HomeCtrl.js'></script>
     <script src='/scripts/controllers/ModalCtrl.js'></script>
     <script src='/scripts/controllers/LoginCtrl.js'></script>
-</body>
+  </body>
 </html>

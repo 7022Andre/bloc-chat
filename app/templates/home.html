@@ -1,4 +1,4 @@
-<div class="container fill">
+<div class="container fill"> 
 	<div class="row">
 		<div class="room-content col-md-9">
 			<div class="room-head">
@@ -21,12 +21,11 @@
 				<h1>{{home.homeTitle}}</h1>
 			</div>
 			<div>
-				<button type="button" class="btn btn-default" ng-click="home.showModal()">Create Room</button>
+				<button type="button" class="btn btn-default yellow-btn" ng-click="home.showModal()">CREATE ROOM</button>
 				<button type="button-danger" class="btn btn-danger" ng-if="home.userData.user.email" ng-click="home.signOut()">Sign Out</button>
 				<ul class="room-list">
 					<li ng-if="!home.rooms[0]"><strong>Please create a new room.</strong></li>
-					<li ng-if="home.rooms[0]"><strong>Please choose your room.</strong></li>
-					<br>
+					<li ng-if="home.rooms[0]"><strong>CHAT ROOMS</strong></li>
 					<li class="room-item" ng-repeat="room in home.rooms track by $index"><a href="" class="room-links" ng-click="home.selectRoom(room)">{{room.$value}}</a></li>
 				</ul>
 			</div>
