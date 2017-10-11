@@ -8,10 +8,10 @@
       Login.signOut();
     };
 
-    this.showModal = function () {
+    this.showRoomModal = function () {
       $uibModal.open({
-        templateUrl: '/templates/modal.html',
-        controller: 'ModalCtrl as modal'
+        templateUrl: '/templates/roomModal.html',
+        controller: 'RoomModalCtrl as roomModal'
       });
     };
 

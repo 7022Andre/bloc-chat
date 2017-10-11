@@ -1,35 +1,6 @@
 module.exports = function(grunt) {
-
-    grunt.registerTask( 'default', [ 'clean', 'copy', 'hapi', 'watch'] );
-
     grunt.registerTask( 'build', [ 'clean', 'copy' ] );
-
-    grunt.registerTask( 'run', [ 'hapi', 'watch' ]);
-
-    grunt.registerTask('eslint', ['eslint']);
-
     grunt.initConfig({
-
-        watch: {
-            hapi: {
-                files: [
-                    './app/assets/**/*.{png,jpg,jpeg,mp3}',
-                    './app/scripts/**/*.js',
-                    './app/styles/**/*.css',
-                    './app/pages/**/*.html',
-                    './app/templates/**/*.html',
-                    'Gruntfile.js'
-                ],
-                tasks: [
-                    'clean',
-                    'copy'
-                ],
-                options: {
-                    spawn: false
-                }
-            }
-        },
-
         copy: {
             dist: {
                 files: [{
@@ -60,28 +31,9 @@ module.exports = function(grunt) {
                 }]
             }
         },
-
-        hapi: {
-            custom_options: {
-                options: {
-                    server: require('path').resolve('./server'),
-                    bases: {
-                        '/dist': require('path').resolve('./dist/')
-                    }
-                }
-            }
-        },
-
-        eslint: {
-            target: ['./app/*']
-        },
-
         clean: ['./dist']
     });
 
-    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-hapi');
-    grunt.loadNpmTasks('grunt-eslint');
 };

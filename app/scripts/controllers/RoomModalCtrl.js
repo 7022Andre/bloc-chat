@@ -1,5 +1,5 @@
 (function () {
-  function ModalCtrl($uibModalInstance, Room) {
+  function RoomModalCtrl($uibModalInstance, Room) {
     this.cancel = function () {
       $uibModalInstance.dismiss('cancel');
     };
@@ -11,5 +11,5 @@
 
   angular
     .module('pdx-chat')
-    .controller('ModalCtrl', ['$uibModalInstance', 'Room', ModalCtrl]);
+    .controller('RoomModalCtrl', ['$uibModalInstance', 'Room', RoomModalCtrl]);
 })();

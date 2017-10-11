@@ -1,34 +1,32 @@
-<div class="container fill"> 
-	<div class="row">
-		<div class="room-content col-md-9">
-			<div class="room-head">
-				<h1><strong>{{home.selectedRoom.$value}}</strong></h1>
-				<hr>
-			</div>
-			<div class="message-list">
-				<ul class="message-list">
-					<li ng-repeat="message in home.messages track by $index"><strong>({{message.sentAt | date:"MM-dd-yyyy - HH:mm:ss"}}) - [{{message.email}}]:</strong> {{message.content}}</li>
-				</ul>
-			</div>
-			<form class="submit-area">
-				<input class="submit-bar" type="text" ng-model="home.messageContent"/>
-				<button class="btn btn-success" ng-click="home.sendMessage()">Send!</button>
-			</form>
+<div class="landing">
+	<div class="navbar">
+		<div class="home-head">
+			<h1>{{home.homeTitle}}</h1>
 		</div>
+		<div>
+			<button type="button" class="btn btn-default yellow-btn" ng-click="home.showRoomModal()">ADD ROOM</button>
+			<button type="button-danger" class="btn btn-danger" ng-if="home.userData.user.email" ng-click="home.signOut()">Sign Out</button>
+			<ul class="room-list">
+				<li ng-if="!home.rooms[0]"><strong>Please add a room.</strong></li>
+				<li ng-if="home.rooms[0]">ROOMS</li>
+				<li class="room-item" ng-repeat="room in home.rooms track by $index"><a href="" class="room-links" ng-click="home.selectRoom(room)">{{room.$value}}</a></li>
+			</ul>
+		</div>
+	</div>
 
-		<div class="navbar col-md-3">
-			<div class="home-head">
-				<h1>{{home.homeTitle}}</h1>
-			</div>
-			<div>
-				<button type="button" class="btn btn-default yellow-btn" ng-click="home.showModal()">CREATE ROOM</button>
-				<button type="button-danger" class="btn btn-danger" ng-if="home.userData.user.email" ng-click="home.signOut()">Sign Out</button>
-				<ul class="room-list">
-					<li ng-if="!home.rooms[0]"><strong>Please create a new room.</strong></li>
-					<li ng-if="home.rooms[0]"><strong>CHAT ROOMS</strong></li>
-					<li class="room-item" ng-repeat="room in home.rooms track by $index"><a href="" class="room-links" ng-click="home.selectRoom(room)">{{room.$value}}</a></li>
-				</ul>
-			</div>
+	<div class="room-content">
+		<div class="room-head">
+			<h1><strong>{{home.selectedRoom.$value}}</strong></h1>
+			<hr>
 		</div>
+		<div class="message-list">
+			<ul class="message-list">
+				<li ng-repeat="message in home.messages track by $index"><strong>({{message.sentAt | date:"MM-dd-yyyy - HH:mm:ss"}}) - [{{message.email}}]:</strong> {{message.content}}</li>
+			</ul>
+		</div>
+		<form class="submit-area">
+			<input class="submit-bar" type="text" ng-model="home.messageContent"/>
+			<button class="btn btn-success" ng-click="home.sendMessage()">Send!</button>
+		</form>
 	</div>
 </div>

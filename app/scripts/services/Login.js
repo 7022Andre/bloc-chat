@@ -5,7 +5,7 @@
         firebase.auth().signOut();
         alert('You have been signed out.');
         $uibModal.open({
-          templateUrl: '/templates/login.html',
+          templateUrl: '/templates/loginModal.html',
           controller: 'LoginCtrl as login',
           backdrop: 'static',
           keyboard: false

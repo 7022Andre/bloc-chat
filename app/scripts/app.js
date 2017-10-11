@@ -16,7 +16,7 @@
 
   function Login($uibModal) {
     $uibModal.open({
-      templateUrl: '/templates/login.html',
+      templateUrl: '/templates/loginModal.html',
       controller: 'LoginCtrl as login',
       backdrop: 'static',
       keyboard: false
