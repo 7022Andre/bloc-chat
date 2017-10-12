@@ -1,32 +1,34 @@
 <div class="landing">
 	<div class="navbar">
-		<div class="home-head">
-			<h1>{{home.homeTitle}}</h1>
-		</div>
-		<div>
-			<button type="button" class="btn btn-default yellow-btn" ng-click="home.showRoomModal()">ADD ROOM</button>
-			<button type="button-danger" class="btn btn-danger" ng-if="home.userData.user.email" ng-click="home.signOut()">Sign Out</button>
+		<h1>{{home.homeTitle}}</h1>
+		<div class="rooms">
+			<button type="button" class="btn yellow-btn" ng-click="home.showRoomModal()">ADD ROOM</button>
+			<button type="button" class="btn btn-danger" ng-if="home.userData.user.email" ng-click="home.signOut()">SIGN OUT</button>
 			<ul class="room-list">
 				<li ng-if="!home.rooms[0]"><strong>Please add a room.</strong></li>
 				<li ng-if="home.rooms[0]">ROOMS</li>
-				<li class="room-item" ng-repeat="room in home.rooms track by $index"><a href="" class="room-links" ng-click="home.selectRoom(room)">{{room.$value}}</a></li>
+				<li class="room-item" ng-repeat="room in home.rooms track by $index">
+					<a href="" class="room-link" ng-click="home.selectRoom(room)">{{room.$value}}</a>
+				</li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="room-content">
 		<div class="room-head">
-			<h1><strong>{{home.selectedRoom.$value}}</strong></h1>
+			<h1>{{home.selectedRoom.$value}}</h1>
 			<hr>
 		</div>
 		<div class="message-list">
-			<ul class="message-list">
-				<li ng-repeat="message in home.messages track by $index"><strong>({{message.sentAt | date:"MM-dd-yyyy - HH:mm:ss"}}) - [{{message.email}}]:</strong> {{message.content}}</li>
+			<ul class="message">
+				<li ng-repeat="message in home.messages track by $index">
+					<strong>({{message.sentAt | date:"MM-dd-yyyy - HH:mm"}}) - [{{message.email}}]:</strong> {{message.content}}
+				</li>
 			</ul>
 		</div>
 		<form class="submit-area">
 			<input class="submit-bar" type="text" ng-model="home.messageContent"/>
-			<button class="btn btn-success" ng-click="home.sendMessage()">Send!</button>
+			<button class="btn yellow-btn" ng-click="home.sendMessage()">Send</button>
 		</form>
 	</div>
 </div>

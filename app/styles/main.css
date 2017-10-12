@@ -1,7 +1,3 @@
-html, body {
-  height: 100%;
-}
-
 /* Modal (login, room) styles */
 .login-modal,
 .room-modal {
@@ -11,6 +7,13 @@ html, body {
 .modal-header {
   background: #607D8B;
   color: #FFFFFF;
+}
+
+.login-modal .modal-header .header-image {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 2rem;
 }
 
 .form-header {

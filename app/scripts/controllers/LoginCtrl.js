@@ -31,7 +31,7 @@
           alert(error.message);
         });
       } else {
-        alert("Match");
+        alert("Passwords don't match.");
       }
     };
   }

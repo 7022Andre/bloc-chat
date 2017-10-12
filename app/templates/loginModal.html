@@ -1,6 +1,7 @@
 <div class="login-modal">
   <form class="main-form" ng-submit="login.userPassword=''" ng-if="login.formShown === 'main'">
     <div class="modal-header">
+      <img class="header-image" src="/assets/pdx-logo.jpg" alt="portland logo">
       <h1 class="form-header">PDX Chat</h1>
       <h3 class="form-header">The instant messenger about Portland</h3>
     </div>
@@ -18,7 +19,7 @@
     </div>
     <div class="modal-footer">
       <button class="btn grey-btn" ng-click="login.showForm('create')">Sign Up</button>
-      <button class="btn grey-btn" ng-click="login.loginGoogle()">Login with Google</button>
+      <button class="btn grey-btn" ng-click="login.loginGoogle()">Log in with Google</button>
     </div>
   </form>
 

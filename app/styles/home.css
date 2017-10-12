@@ -9,38 +9,6 @@
 .divider-color         { border-color: #BDBDBD; }
 */
 
-.container {
-  height: 100%;
-  width: 100%;
-}
-
-.row {
-	height: 100%;
-}
-
-a:hover,
-a:focus {
-	color: #BDBDBD;
-	text-decoration: none;
-}
-
-.room-content {
-	margin-bottom: 0;
-	width: 80%;
-	height: 100%;
-}
-
-.room-head,
-.room-item,
-.message-list,
-.home-head {
-	color: #455A64;
-}
-
-.message-list {
-	list-style-type: none;
-}
-
 .navbar {
 	position: fixed;
 	top: 0;
@@ -52,18 +20,18 @@ a:focus {
 	padding-left: 1rem;
 }
 
-.navbar .home-head h1 {
+.navbar h1 {
 	font-size: 4rem;
 	color: #FFFFFF;
 }
 
-.room-list {
+.navbar .rooms .room-list {
 	list-style-type: none;
 	margin-top: 1rem;
 	padding-left: 0;
 }
 
-.room-list li:nth-child(1) {
+.navbar .rooms .room-list li:nth-child(1) {
 	font-size: 2rem;
 	font-weight: 600;
 }
@@ -72,9 +40,39 @@ a:focus {
 	margin-top: 1rem;
 }
 
-.room-links {
+.room-link {
 	color: #FFFFFF;
-	text-transform: uppercase;
+}
+
+a:hover,
+a:focus {
+	color: #BDBDBD;
+	text-decoration: none;
+}
+
+.room-content {
+	margin-bottom: 0;
+	height: 100%;
+}
+
+.room-head,
+.room-item,
+.message-list,
+.home-head {
+	color: #455A64;
+}
+
+.room-head {
+	margin: 0 2rem;
+}
+
+.room-head h1 {
+	font-weight: 700;
+}
+
+.message-list,
+.message {
+	list-style-type: none;
 }
 
 .submit-area {
@@ -82,7 +80,7 @@ a:focus {
 	bottom: 0;
 	left: 0;
 	margin: 0;
-	padding: 15px;
+	padding: 2rem;
 	min-width: 100%;
 	max-width: 100%;
 }
